@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hello_World
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("What is your name?");
+            string name = Console.ReadLine();
+            Console.WriteLine($"Hello, {name}!");
+            Schedule();
+            Console.ReadKey();
+        }
+
+        static void Schedule()
+        {
+            Console.WriteLine("What day of the week is it for you?");
+            string day = Console.ReadLine();
+
+            if (day == "Monday" || day == "Tuesday" || day == "Wednesday" || day == "Thursday" || day == "Friday")
+            {
+                Console.WriteLine($"Today is {day}. You have class today.");
+            } else if (day == "Saturday" || day == "Sunday")
+            {
+                Console.WriteLine($"Today is {day}. You have no classes today.");
+            } else
+            {
+                Console.WriteLine("Something went wrong. Try again.");
+                Schedule();
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
